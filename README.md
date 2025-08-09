@@ -56,19 +56,16 @@ Open your browser at the address Streamlit prints (usually [http://localhost:850
 
 ---
 
-## 🖼️ Demo images (how to add)
 
-Add sample images into a repository folder `images/` (create it at the repo root). This README includes two visual slots — replace the example paths with your actual images.
+## 🖼️ Demo images
 
-* **Input example** — *what the user will upload*: `sample_images/pituitary/enh_Tr-pi_0021.jpg`
+- **Input example** — *what the user will upload*:
 
+![Input MRI sample](./sample_images/pituitary/enh_Tr-pi_0021.jpg)
 
+- **Predicted output** — *segmentation mask overlay + predicted tumor category*:
 
-* **Predicted output** — *segmentation mask overlay + predicted tumor category*: `results/pred.png`
-
-
-
-If you want a nicer layout, create a tiny `assets/` folder and reference the images from there. GitHub will render them automatically in the README.
+![Predicted segmentation and classification](./results/pred.png)
 
 ---
 
@@ -82,15 +79,6 @@ If you want a nicer layout, create a tiny `assets/` folder and reference the ima
    * If present: tumor type (Meningioma / Glioma / Pituitary)
    * Segmentation mask overlaid on the original MRI
 
----
-
-## 🛠️ Reproduce training
-
-To retrain the models locally or on Kaggle:
-
-1. Prepare the dataset with the same folder layout your `src/data` loader expects (see `src/utils/data_loader.py`).
-3. Run the training scripts.
-
 
 ---
 
@@ -103,16 +91,9 @@ To retrain the models locally or on Kaggle:
 
 ---
 
-## 🙋‍♂️ Author
+##  Author
 
 Praveen V.V.J — 2025
-
-If you'd like, I can:
-
-* add the actual Kaggle link into this README,
-* replace placeholders with your real images (you can upload them or give paths),
-* generate a polished `README.png` preview layout, or
-* add license and citation text.
 
 ---
 
