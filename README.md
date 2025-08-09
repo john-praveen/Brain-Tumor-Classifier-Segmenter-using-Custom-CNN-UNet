@@ -1,11 +1,11 @@
-# 🧠 Brain Tumor Detection, Classification & Segmentation
+# Brain Tumor Detection, Classification & Segmentation
 
 A complete deep-learning pipeline for analyzing brain MRI images —
 binary tumor detection, tumor-type classification (Meningioma, Glioma, Pituitary), and pixel-wise semantic segmentation using a custom UNet. Includes a Streamlit app so anyone can try the model from the browser.
 
 ---
 
-## 🚀 Quick start
+##  Quick start
 
 ```bash
 pip install -r requirements.txt
@@ -32,9 +32,7 @@ Open your browser at the address Streamlit prints (usually [http://localhost:850
 ```
 ├─ streamlit_app/        # Streamlit web app (app.py)
 ├─ src/                  # Model code: UNet, classifiers, training + utils
-├─ models/               # Trained model checkpoints (not in repo unless added)
-├─ notebooks/            # Jupyter notebooks for experiments and EDA
-├─ sample/               # Sample MRI images you can try out
+├─ sample_images/               # Sample MRI images you can try out
 ├─ requirements.txt
 └─ README.md
 ```
@@ -53,9 +51,8 @@ Open your browser at the address Streamlit prints (usually [http://localhost:850
 * **Training dataset:** Models were trained on a Kaggle dataset (link below). Training was performed on Kaggle (or your preferred GPU environment).
 
 **Kaggle dataset:**
-`<INSERT_KAGGLE_DATASET_URL_HERE>`
+`<(https://www.kaggle.com/datasets/indk214/brain-tumor-dataset-segmentation-and-classification)>`
 
-(Replace the placeholder with the Kaggle dataset link you want to credit.)
 
 ---
 
@@ -63,17 +60,13 @@ Open your browser at the address Streamlit prints (usually [http://localhost:850
 
 Add sample images into a repository folder `images/` (create it at the repo root). This README includes two visual slots — replace the example paths with your actual images.
 
-* **Input example** — *what the user will upload*: `images/input_sample.png`
+* **Input example** — *what the user will upload*: `sample_images/pituitary/enh_Tr-pi_0021.jpg`
 
-```
-![Input MRI sample](images/input_sample.png)
-```
 
-* **Predicted output** — *segmentation mask overlay + predicted tumor category*: `images/predicted_output.png`
 
-```
-![Predicted segmentation and classification](images/predicted_output.png)
-```
+* **Predicted output** — *segmentation mask overlay + predicted tumor category*: `results/pred.png`
+
+
 
 If you want a nicer layout, create a tiny `assets/` folder and reference the images from there. GitHub will render them automatically in the README.
 
@@ -96,33 +89,17 @@ If you want a nicer layout, create a tiny `assets/` folder and reference the ima
 To retrain the models locally or on Kaggle:
 
 1. Prepare the dataset with the same folder layout your `src/data` loader expects (see `src/utils/data_loader.py`).
-2. Install dependencies: `pip install -r requirements.txt`.
-3. Run the training script (example):
+3. Run the training scripts.
 
-```bash
-python src/train_segmentation.py --config configs/unet_config.yaml
-python src/train_classifier.py --config configs/classifier_config.yaml
-```
-
-Training hyperparameters, augmentation, and evaluation metrics are controlled by the YAML config files in `configs/`.
 
 ---
 
 ## 🧾 Notes / Tips
 
-* I used **TensorFlow** and trained the models on **Kaggle** (GPU runtime). If you want Docker or Colab notebooks to reproduce the environment, tell me and I can add them.
-* For segmentation visualisation I overlay the predicted mask using simple alpha blending — see `src/visualize/overlay.py`.
+* I used **TensorFlow** and trained the models on **Kaggle** (GPU runtime). 
 * If you plan to publish the model, include model cards and details about the dataset splits (train/val/test), performance metrics (Dice, IoU, accuracy), and known limitations.
 
 ---
-
-## 📌 Example metrics (add yours)
-
-Replace these with your actual numbers after evaluation:
-
-* Segmentation — Dice score: `0.86`
-* Classification (binary) — Accuracy: `0.95`
-* Classification (3-way) — Accuracy: `0.89`
 
 ---
 
@@ -139,12 +116,3 @@ If you'd like, I can:
 
 ---
 
-## 🧾 License
-
-*Add your preferred license (MIT, Apache-2.0, etc.) here.*
-
----
-
-## 📬 Contact
-
-If you want me to fill in the Kaggle URL and the two output images here, paste them and I will update th
