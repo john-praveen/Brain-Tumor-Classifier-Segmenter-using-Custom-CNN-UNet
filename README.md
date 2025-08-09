@@ -32,7 +32,8 @@ Open your browser at the address Streamlit prints (usually [http://localhost:850
 ```
 ├─ streamlit_app/        # Streamlit web app (app.py)
 ├─ src/                  # Model code: UNet, classifiers, training + utils
-├─ sample_images/               # Sample MRI images you can try out
+├─ results/                 
+├─ sample_images/       # Sample MRI images you can try out
 ├─ requirements.txt
 └─ README.md
 ```
